@@ -1,21 +1,34 @@
-# Implementación de Base de Datos - Consultorio Santa Gema
-**Semana 6 - Módulo Base de Datos**
+# Implementación de Base de Datos - Holding Carpenter SPA
+**Semana 7 - Módulo Base de Datos**
 
 ## Descripción
-Este proyecto consiste en la creación de una base de datos relacional para la gestión de recetas médicas, pacientes y pagos del Consultorio Municipal Santa Gema.
+Este proyecto corresponde a la actividad formativa de la semana 7, enfocada en la implementación de un sistema de gestión de personal para el Holding Carpenter SPA. El trabajo abarca desde el diseño estructural (DDL) hasta la generación de reportes estadísticos avanzados.
 
-## Requerimientos Implementados
-- **DDL Completo**: Creación de tablas con tipos de datos adecuados.
-- **Restricciones (Constraints)**:
-  - Primary Keys y Foreign Keys para integridad referencial.
-  - Checks para validación de Dígito Verificador (0-9, K).
-  - Unique para teléfonos de médicos.
-- **Automatización**: Uso de `IDENTITY` para `id_especialidad` e `id_comuna` (iniciando en 1101).
-- **Modificaciones (Caso 2)**:
-  - Uso de `ALTER TABLE` para agregar precios con rangos (1.000 a 2.000.000).
-  - Restricción de métodos de pago (Efectivo, Tarjeta, Transferencia).
-  - Sustitución de columna `edad` por `fecha_nacimiento`.
+## Contenidos del Proyecto
+El script SQL adjunto (`.sql`) está organizado en 4 casos principales:
 
-## Tecnologías
-- Oracle SQL Developer
-- Oracle Cloud (ADB)
+### 1. Caso 1: Implementación del Modelo (DDL)
+* Creación de tablas siguiendo la jerarquía de integridad referencial.
+* Definición de **Primary Keys** y **Foreign Keys**.
+* Implementación de columnas **Identity** en las tablas `REGION` (inicio 7, inc. 2) e `IDIOMA` (inicio 25, inc. 3).
+
+### 2. Caso 2: Reglas de Negocio (ALTER TABLE)
+* Configuración de restricciones de unicidad (`UNIQUE`) para correos electrónicos.
+* Validación de Dígito Verificador del RUN mediante `CHECK`.
+* Restricción de sueldo base mínimo ($450.000).
+
+### 3. Caso 3: Poblamiento y Secuencias
+* Creación de objetos `SEQUENCE` para las tablas `COMUNA` e `COMPANIA`.
+* Inserción de datos utilizando el método `.NEXTVAL`.
+
+### 4. Caso 4: Recuperación de Datos (Reportes)
+* **Informe 1**: Simulación de renta promedio con ordenamiento descendente por renta y ascendente por nombre de empresa.
+* **Informe 2**: Simulación de renta con un incremento adicional del 15% sobre el porcentaje base, utilizando operadores aritméticos y alias de columna.
+
+## Integrantes
+* Daniel Ceballos
+* Catalina Hillmer
+
+## Tecnologías Utilizadas
+* **Base de Datos**: Oracle Database (Oracle Cloud)
+* **IDE**: Oracle SQL Developer (24.3)
